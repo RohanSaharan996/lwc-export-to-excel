@@ -1,0 +1,130 @@
+<!-- <--<template> 
+    <div class="slds-box slds-theme--default">
+        <lightning-datatable 
+            key-field="Id"
+            data={records}
+            columns={dtcolumns}
+            hide-checkbox-column="true"
+            class="slds-m-top--large">
+        </lightning-datatable>
+        Click on the link Below to Export data as xlsx.
+        <p class="slds-m-top--large">
+            <lightning-button variant="brand" label="Export Account data" title="Export Account Data" onclick={exportToXLSX}></lightning-button>
+        </p>
+    </div>
+</template> -->
+<template>
+    
+    <lightning-card title="Renewal Calculation Summary" icon-name="standard:opportunity">
+        <div class="slds-p-horizontal_medium">
+            <div>
+            <table class="custom-table slds-table slds-table_cell-buffer slds-table_bordered">
+                <thead>
+                <tr>
+                    <th colspan="8" class="group-header">Renewal Amount</th>
+                </tr>
+                </thead>
+                <tr>
+                    <th colspan="8">&nbsp;</th>
+                </tr>
+                <tr>
+                    <th class="renewalHeader">Renewed From (Opportunity)</th>
+                    <td>opportunityData</td>
+                    <th class="renewalHeader">Quote / Target Uplift</th>
+                    <td>quoteNumber</td>
+                    <th class="renewalHeader">Currency</th>
+                    <td>USD</td>
+                </tr>
+                <tr>
+                    <th class="renewalHeader">Pre-renewal ACV</th>
+                    <td>$57,817.53</td>
+                    <th class="renewalHeader">Post-renewal ACV</th>
+                    <td>$68,467.46</td>
+                    <th class="renewalHeader">Delta ACV</th>
+                    <td class="highlight">$10,649.93</td>
+                </tr>
+                <tr>
+                    <th class="renewalHeader">Gross Uplift</th>
+                    <td>$2,047.90</td>
+                    <th class="renewalHeader">Gross Attrition</th>
+                    <td class="negative">-$23,685.92</td>
+                    <th class="renewalHeader">Gross Upsell</th>
+                    <td class="positive">$32,287.95</td>
+                </tr>
+                <tr>
+                    <th class="renewalHeader">Net Uplift</th>
+                    <td>$2,047.90</td>
+                    <th class="renewalHeader">Net Attrition</th>
+                    <td>$0.00</td>
+                    <th class="renewalHeader">Net Upsell</th>
+                    <td class="highlight">$10,649.93</td>
+                </tr>
+                <tr>
+                    <th colspan="8">&nbsp;</th>
+                </tr>
+            </table>
+        </div>
+        <div style="overflow-x: auto; overflow-y : hidden;">
+            <table class="custom-table slds-table slds-table_cell-buffer slds-table_bordered">
+                <thead>
+                    <tr>
+                        <th colspan="16" class="group-header">Calculations</th>
+                    </tr>
+                </thead>
+                    <tr>
+                        <th colspan="16">&nbsp;</th>
+                    </tr>
+                <thead>
+                    <tr>
+                        <th colspan="2" class="group-header">Product Details</th>
+                        <th colspan="3" class="group-header pre">Pre Renewal</th>
+                        <th colspan="3" class="group-header renewal">Renewal</th>
+                        <th colspan="8" class="group-header calc">Calculations</th>
+                    </tr>
+                    <tr>
+                        <th>Pillar</th>
+                        <th>Product</th>
+                        <th>Qty</th>
+                        <th>Eff Rate</th>
+                        <th>ACV</th>
+                        <th>Qty</th>
+                        <th>Eff Rate</th>
+                        <th>ACV</th>
+                        <th>ACV Δ</th>
+                        <th>Rate Δ</th>
+                        <th>Uplift Qty</th>
+                        <th>Uplift Amt</th>
+                        <th>Attrition Qty</th>
+                        <th>Attrition Amt</th>
+                        <th>Upsell Qty</th>
+                        <th>Upsell Amt</th>
+                    </tr>
+                </thead>
+                <tbody>
+                        <tr>
+                            <td>789</td>
+                            <td>098</td>
+                            <td>90887</td>
+                            <td>56</td>
+                            <td>98676</td>
+                            <td>0998</td>
+                            <td>4545</td>
+                            <td>5467</td>
+                            <td>5678</td>
+                            <td>4567</td>
+                            <td>0987</td>
+                            <td>678</td>
+                            <td>678</td>
+                            <td>56789</td>
+                            <td>5456</td>
+                            <td>34567</td>
+                        </tr>
+                </tbody>
+            </table>
+        </div>
+        </div>
+    </lightning-card>
+  
+    <lightning-button label="Export to Excel" onclick={exportToExcel} variant="brand"></lightning-button>
+
+</template>
